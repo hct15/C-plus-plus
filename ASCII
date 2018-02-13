@@ -1,0 +1,35 @@
+/*Name: Holly Thorsted
+ Course: CGS 3406
+ Assignment: Assignment 3 ascii
+ Due Date: 2/9/2018
+ About this Project: This program prompts the user to repeatedly input ASCII values between 1 and 255 until a sentinel value of 0 has been input.*/
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    //user input variable
+    int input;
+    char var1;
+
+    //prompt user to input ascii variable
+    do {
+    cout << "\nInput an ASCII value from 1 to 255 (0 to stop): ";
+    cin >> input;
+    
+        //if else statement to output character if input is not 0, less than 256, & greater than 0
+        if (input != 0 && input > 0 && input < 256) {
+            var1 = static_cast<char>(input);
+            cout << "The ASCII value of " << input << " gives you the character '" << var1 <<"'" <<endl;
+        
+        } else if (input != 0){
+            cout << "Error: ASCII value must be a positive integer less than 256. Try again.\n";
+        }
+    }
+    //while statement to continue running loop if 0 is not input
+    while (input != 0);
+    
+    return 0;
+}
+
